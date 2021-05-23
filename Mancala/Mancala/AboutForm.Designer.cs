@@ -1,7 +1,7 @@
 ﻿
 namespace Mancala
 {
-    partial class Form1
+    partial class AboutForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,13 +29,19 @@ namespace Mancala
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // AboutForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(421, 213);
+            this.Name = "AboutForm";
+            this.Text = "Mancala About";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
     }
 }
-

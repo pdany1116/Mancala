@@ -1,0 +1,12 @@
+C:\Users\Dani\source\repos\Mancala\Mancala\Mancala\Mancala\bin\Debug\Mancala.exe.config
+C:\Users\Dani\source\repos\Mancala\Mancala\Mancala\Mancala\bin\Debug\Mancala.exe
+C:\Users\Dani\source\repos\Mancala\Mancala\Mancala\Mancala\bin\Debug\Mancala.pdb
+C:\Users\Dani\source\repos\Mancala\Mancala\Mancala\Mancala\obj\Debug\Mancala.csprojAssemblyReference.cache
+C:\Users\Dani\source\repos\Mancala\Mancala\Mancala\Mancala\obj\Debug\Mancala.Properties.Resources.resources
+C:\Users\Dani\source\repos\Mancala\Mancala\Mancala\Mancala\obj\Debug\Mancala.csproj.GenerateResource.cache
+C:\Users\Dani\source\repos\Mancala\Mancala\Mancala\Mancala\obj\Debug\Mancala.csproj.CoreCompileInputs.cache
+C:\Users\Dani\source\repos\Mancala\Mancala\Mancala\Mancala\obj\Debug\Mancala.exe
+C:\Users\Dani\source\repos\Mancala\Mancala\Mancala\Mancala\obj\Debug\Mancala.pdb
+C:\Users\Dani\source\repos\Mancala\Mancala\Mancala\Mancala\obj\Debug\Mancala.GameForm.resources
+C:\Users\Dani\source\repos\Mancala\Mancala\Mancala\Mancala\obj\Debug\Mancala.MenuForm.resources
+C:\Users\Dani\source\repos\Mancala\Mancala\Mancala\Mancala\obj\Debug\Mancala.AboutForm.resources
