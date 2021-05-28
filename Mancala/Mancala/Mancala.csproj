@@ -67,19 +67,28 @@
     <Compile Include="Game\Table\Pit.cs" />
     <Compile Include="Game\Table\Store.cs" />
     <Compile Include="Game\Table\Board.cs" />
-    <Compile Include="GameForm.cs">
+    <Compile Include="AIGameForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GameForm.Designer.cs">
-      <DependentUpon>GameForm.cs</DependentUpon>
+    <Compile Include="AIGameForm.Designer.cs">
+      <DependentUpon>AIGameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PvPGameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PvPGameForm.Designer.cs">
+      <DependentUpon>PvPGameForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GameForm.resx">
-      <DependentUpon>GameForm.cs</DependentUpon>
+    <EmbeddedResource Include="AIGameForm.resx">
+      <DependentUpon>AIGameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PvPGameForm.resx">
+      <DependentUpon>PvPGameForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>

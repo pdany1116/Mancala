@@ -1,7 +1,7 @@
 ﻿
 namespace Mancala
 {
-    partial class GameForm
+    partial class PvPGameForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Mancala
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PvPGameForm));
             this.panel = new System.Windows.Forms.Panel();
             this.startGameBtn = new System.Windows.Forms.Button();
             this.pit5pb = new System.Windows.Forms.PictureBox();
@@ -60,7 +60,7 @@ namespace Mancala
             this.pit2 = new System.Windows.Forms.Label();
             this.pit1 = new System.Windows.Forms.Label();
             this.pit0 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.nextBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pit5pb)).BeginInit();
@@ -392,15 +392,15 @@ namespace Mancala
             this.pit0.TabIndex = 0;
             this.pit0.Text = "0";
             // 
-            // button1
+            // nextBtn
             // 
-            this.button1.Location = new System.Drawing.Point(849, 64);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 81);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Next";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.nextBtn.Location = new System.Drawing.Point(849, 64);
+            this.nextBtn.Name = "nextBtn";
+            this.nextBtn.Size = new System.Drawing.Size(81, 81);
+            this.nextBtn.TabIndex = 14;
+            this.nextBtn.Text = "Next";
+            this.nextBtn.UseVisualStyleBackColor = true;
+            this.nextBtn.Click += new System.EventHandler(this.next_Click);
             // 
             // label1
             // 
@@ -412,15 +412,15 @@ namespace Mancala
             this.label1.TabIndex = 15;
             this.label1.Text = "Player 1 Moves";
             // 
-            // GameForm
+            // PvPGameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(961, 450);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.nextBtn);
             this.Controls.Add(this.panel);
-            this.Name = "GameForm";
+            this.Name = "PvPGameForm";
             this.Text = "Mancala Game";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GameForm_FormClosing);
             this.panel.ResumeLayout(false);
@@ -461,7 +461,7 @@ namespace Mancala
         private System.Windows.Forms.Label pit2;
         private System.Windows.Forms.Label pit1;
         private System.Windows.Forms.Label pit0;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button nextBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pit6pb;
         private System.Windows.Forms.PictureBox pit13pb;

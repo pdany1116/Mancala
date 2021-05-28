@@ -1,21 +1,22 @@
 ﻿using System;
 using System.Drawing;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Mancala
 {
-    public partial class GameForm : Form
+    public partial class AIGameForm : Form
     {
         MenuForm _menuForm;
-        int round = 1; //1 = first player 2 = second player
+        int round = 1; //1 = first player, 2 = second player
         bool moved = false;
         Label[] pits; //pit6 - store for player 1, pit13 - store for player2
         PictureBox[] pb;
         int lastPitIndex = -1;
         Random rnd = new Random();
 
-        public GameForm(MenuForm menuForm)
+        public AIGameForm(MenuForm menuForm)
         {
             InitializeComponent();
             _menuForm = menuForm;
@@ -51,8 +52,7 @@ namespace Mancala
             }
             //make the count of rocks 0 in the clicked pit, and start sharing them to the next pits
             ShareCount(label, int.Parse(label.Text));
-            //Draw 0 rocks in the clicked pit
-            DrawRocks(label, 0);
+
             //if the last rock was dropped in the player's store, permit another move, else disable all pits until the player hits Next 
             if (!(lastPitIndex == 6 || lastPitIndex == 13))
             {
@@ -118,6 +118,8 @@ namespace Mancala
 
             //set number of rocks in the clicked pit to 0
             label.Text = "0";
+            //Draw 0 rocks in the clicked pit
+            DrawRocks(label, 0);
 
             //get the index of the next pit after the clicked pit
             int nextPitIndex = int.Parse(label.Name.Remove(0, 3)) + 1;
@@ -185,7 +187,7 @@ namespace Mancala
             if (CheckEndGame())
             {
                 SetAllPitsDisabled();
-                button1.Hide();
+                nextBtn.Hide();
             }
         }
 
@@ -218,7 +220,7 @@ namespace Mancala
             for (int i = 0; i < 6; i++)
             {
                 pits[i].Click -= new EventHandler(pitClick);
-                pb[i].Click += new EventHandler(pitClick);
+                pb[i].Click -= new EventHandler(pitClick);
             }
         }
         //remove click event on player's 2 pits (not clickable)
@@ -260,14 +262,14 @@ namespace Mancala
                 for (int i = 7; i < 13; i++)
                 {
                     //add the rocks and make the pits empty
-                    val = int.Parse(pits[i].Text);
+                    val += int.Parse(pits[i].Text);
                     pits[i].Text = "0";
                     DrawRocks(pits[i], 0);
                 }
                 //add to the store the rocks
-                val = int.Parse(pits[13].Text);
-                MessageBox.Show("No more rocks on player's 1 side! Game ending...");
+                val += int.Parse(pits[13].Text);
                 pits[13].Text = val.ToString();
+                MessageBox.Show("No more rocks on player's 1 side! Game ending...");
                 return true;
             }
 
@@ -285,41 +287,51 @@ namespace Mancala
                 int val = 0;
                 for (int i = 0; i < 6; i++)
                 {
-                    val = int.Parse(pits[i].Text);
+                    val += int.Parse(pits[i].Text);
                     pits[i].Text = "0";
                     DrawRocks(pits[i], 0);
                 }
-                val = int.Parse(pits[6].Text);
-                MessageBox.Show("No more rocks on player's 2 side! Game ending...");
+                val += int.Parse(pits[6].Text);
                 pits[6].Text = val.ToString();
+                MessageBox.Show("No more rocks on player's 2 side! Game ending...");
                 return true;
             }
             return false;
         }
 
         //this event is called when a player moved and he ended his turn by pressing Next
-        private void button1_Click(object sender, EventArgs e)
+        private void next_Click(object sender, EventArgs e)
         {
             if (!moved)
             {
                 MessageBox.Show("Please make a move!");
                 return;
             }
-            //we count the rounds (par - player 1, impar - player 2)
-            round++;
-            if (round % 2 == 1)
-            {
-                label1.Text = "Player 1 Moves";
-                SetPits1Enable();
-                SetPits2Disable();
+            SetPits1Disable(); 
+            nextBtn.Enabled = false;
+            round = 2;
+            Label label = new Label();
+            label.Text = "0";
+
+
+            while (label.Text == "0") {
+                label = getRandomLabel();
             }
-            else
-            {
-                label1.Text = "Player 2 Moves";
-                SetPits2Enable();
-                SetPits1Disable();
-            }
+
+
+            ShareCount(label, int.Parse(label.Text));
+            SetPits1Enable();
+            round = 1;
+            nextBtn.Enabled = true;
             moved = false;
+        }
+
+        private Label getRandomLabel()
+        {
+            //inclusive, exclusive
+            int rand = rnd.Next(7, 13);
+            string name = $"pit{rand}";
+            return this.Controls.Find(name, true).FirstOrDefault() as Label;
         }
 
         private void startGameBtn_Click(object sender, EventArgs e)

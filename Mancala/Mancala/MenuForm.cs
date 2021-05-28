@@ -4,7 +4,6 @@ namespace Mancala
 {
     public partial class MenuForm : Form
     {
-        GameForm _gameForm;
         public MenuForm()
         {
             InitializeComponent();
@@ -19,24 +18,23 @@ namespace Mancala
 
         private void newGameAIBtn_Click(object sender, System.EventArgs e)
         {
-            _gameForm = new GameForm(this);
+            AIGameForm aIGameForm = new AIGameForm(this);
             this.Hide();
-            _gameForm.ShowDialog();
+            aIGameForm.ShowDialog();
 
         }
 
         private void newGamePvPBtn_Click(object sender, System.EventArgs e)
         {
-            _gameForm = new GameForm(this);
+            PvPGameForm pvPGameForm = new PvPGameForm(this);
             this.Hide();
-            _gameForm.ShowDialog();
+            pvPGameForm.ShowDialog();
         }
 
         private void aboutBtn_Click(object sender, System.EventArgs e)
         {
             AboutForm aboutForm = new AboutForm();
             aboutForm.ShowDialog();
-
         }
 
         private void exitBtn_Click(object sender, System.EventArgs e)

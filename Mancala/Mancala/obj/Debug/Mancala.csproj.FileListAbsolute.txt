@@ -7,6 +7,7 @@ C:\Users\Dani\source\repos\Mancala\Mancala\Mancala\Mancala\obj\Debug\Mancala.csp
 C:\Users\Dani\source\repos\Mancala\Mancala\Mancala\Mancala\obj\Debug\Mancala.csproj.CoreCompileInputs.cache
 C:\Users\Dani\source\repos\Mancala\Mancala\Mancala\Mancala\obj\Debug\Mancala.exe
 C:\Users\Dani\source\repos\Mancala\Mancala\Mancala\Mancala\obj\Debug\Mancala.pdb
-C:\Users\Dani\source\repos\Mancala\Mancala\Mancala\Mancala\obj\Debug\Mancala.GameForm.resources
 C:\Users\Dani\source\repos\Mancala\Mancala\Mancala\Mancala\obj\Debug\Mancala.MenuForm.resources
 C:\Users\Dani\source\repos\Mancala\Mancala\Mancala\Mancala\obj\Debug\Mancala.AboutForm.resources
+C:\Users\Dani\source\repos\Mancala\Mancala\Mancala\Mancala\obj\Debug\Mancala.PvPGameForm.resources
+C:\Users\Dani\source\repos\Mancala\Mancala\Mancala\Mancala\obj\Debug\Mancala.AIGameForm.resources
