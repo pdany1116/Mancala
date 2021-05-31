@@ -113,7 +113,7 @@ namespace Mancala
 
         void ShareCount(Label label, int count)
         {
-
+            bool passedStore = false;
             //set number of rocks in the clicked pit to 0
             label.Text = "0";
             //Draw 0 rocks in the clicked pit
@@ -137,6 +137,14 @@ namespace Mancala
                 {
                     nextPitIndex = 7;
                 }
+                if (round % 2 == 1 && nextPitIndex == 6)
+                {
+                    passedStore = true;
+                }
+                else if (round % 2 == 0 && nextPitIndex == 13)
+                {
+                    passedStore = true;
+                }
 
                 //add 1 rock to the next pit and substract it from the count of the clicked pit
                 int val = int.Parse(pits[nextPitIndex].Text) + 1;
@@ -152,8 +160,9 @@ namespace Mancala
             //get the pit where it was placed the last rock from the clicked pit
             lastPitIndex = nextPitIndex - 1;
 
-            //if the last pit is 1 (it was 0 + the last rock) and it is not one of the stores, then get the opposite pit's rocks and put them in your store
-            if (pits[lastPitIndex].Text == "1" && !(lastPitIndex == 6 || lastPitIndex == 13))
+            //if the last pit is 1 (it was 0 + the last rock), if it is not one of the stores and if it did not drop a rock in the store,
+            // then get the opposite pit's rocks and put them in your store
+            if (pits[lastPitIndex].Text == "1" && !(lastPitIndex == 6 || lastPitIndex == 13) && !passedStore)
             {
                 //calculate the opposite pit
                 int oppositeIndex = 12 - lastPitIndex;
