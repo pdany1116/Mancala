@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Mancala
 {
@@ -10,7 +6,7 @@ namespace Mancala
     {
         public int _value = -50;
         public int[] _board { get; set; }
-        public int _round = 2; //AI player
+        public int _type = 2; //1 - player(minimizer) 2 - AI (maximizer), default 2 for root
         public int _pos = -1;
 
         public List<TreeNode> _children { get; set; }
@@ -21,18 +17,18 @@ namespace Mancala
             _board = board;
         }
 
-        public TreeNode(int[] board, int pos, int round)
+        public TreeNode(int[] board, int pos, int type)
         {
             this._children = new List<TreeNode>();
             _board = board;
             _value = board[13] - board[6];
             _pos = pos;
-            _round = round;
+            _type = type;
         }
 
-        public void AddChild(int[] board, int pos, int round)
+        public void AddChild(int[] board, int pos, int type)
         {
-            var treeNode = new TreeNode(board, pos, round);
+            var treeNode = new TreeNode(board, pos, type);
             _children.Add(treeNode);
         }
     }
