@@ -62,7 +62,7 @@ namespace Mancala
             this.pit0 = new System.Windows.Forms.Label();
             this.nextBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.logGameConsole = new System.Windows.Forms.RichTextBox();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pit5pb)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pit4pb)).BeginInit();
@@ -413,22 +413,22 @@ namespace Mancala
             this.label1.TabIndex = 15;
             this.label1.Text = "Player 1 Moves";
             // 
-            // richTextBox1
+            // logGameConsole
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(806, 151);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.richTextBox1.Size = new System.Drawing.Size(212, 299);
-            this.richTextBox1.TabIndex = 16;
-            this.richTextBox1.Text = "";
+            this.logGameConsole.Location = new System.Drawing.Point(806, 151);
+            this.logGameConsole.Name = "logGameConsole";
+            this.logGameConsole.ReadOnly = true;
+            this.logGameConsole.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.logGameConsole.Size = new System.Drawing.Size(212, 299);
+            this.logGameConsole.TabIndex = 16;
+            this.logGameConsole.Text = "";
             // 
             // AIGameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1019, 450);
-            this.Controls.Add(this.richTextBox1);
+            this.ClientSize = new System.Drawing.Size(1024, 450);
+            this.Controls.Add(this.logGameConsole);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.nextBtn);
             this.Controls.Add(this.panel);
@@ -490,6 +490,6 @@ namespace Mancala
         private System.Windows.Forms.PictureBox pit11pb;
         private System.Windows.Forms.PictureBox pit12pb;
         private System.Windows.Forms.Button startGameBtn;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox logGameConsole;
     }
 }

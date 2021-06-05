@@ -26,12 +26,14 @@ namespace Mancala
             //set all to pits to be unclickable until Start Game
             SetAllPitsDisabled();
             //init log console
-            richTextBox1.Text = "";
+            logGameConsole.Text = "";
         }
+
         private void GameForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             _menuForm.Show();
         }
+
         private void startGameBtn_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < _pits.Length; i++)
@@ -62,7 +64,7 @@ namespace Mancala
             if (label == null)
             {
                 string name = pb.Name.Remove(pb.Name.Length - 2, 2);
-                label = this.Controls.Find(name, true).FirstOrDefault() as Label;
+                label = GetPitByName(name);
             }
             //if the clicked pit is empty, do nothing
             if(GetPitCount(label) == 0)
@@ -413,11 +415,12 @@ namespace Mancala
             //set the new number of rocks (actual + 1)
             label.Text = count.ToString();
             //draw the number of rocks
-            DrawRocks(label, count);
+            DrawRocks(label);
         }
 
-        void DrawRocks(Label label, int count)
+        void DrawRocks(Label label)
         {
+            int count = GetPitCount(label);
             //get the picture box related to the clicked pit
             PictureBox pb = this.Controls.Find(label.Name + "pb", true).FirstOrDefault() as PictureBox;
 
@@ -464,6 +467,7 @@ namespace Mancala
             }
             while (count != 0);
         }
+
         //add click event on player's 1 pits
         void SetPits1Enable()
         {
@@ -566,9 +570,10 @@ namespace Mancala
                 MessageBox.Show($"Draw!!!");
             }
         }
+
         void LOG(string message)
         {
-            richTextBox1.AppendText($"\n{message}");
+            logGameConsole.AppendText($"\n{message}");
         }
     }
 }
