@@ -62,6 +62,7 @@ namespace Mancala
             this.pit0 = new System.Windows.Forms.Label();
             this.nextBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pit5pb)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pit4pb)).BeginInit();
@@ -394,7 +395,7 @@ namespace Mancala
             // 
             // nextBtn
             // 
-            this.nextBtn.Location = new System.Drawing.Point(849, 64);
+            this.nextBtn.Location = new System.Drawing.Point(880, 64);
             this.nextBtn.Name = "nextBtn";
             this.nextBtn.Size = new System.Drawing.Size(81, 81);
             this.nextBtn.TabIndex = 14;
@@ -406,17 +407,28 @@ namespace Mancala
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(809, 37);
+            this.label1.Location = new System.Drawing.Point(840, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(152, 24);
             this.label1.TabIndex = 15;
             this.label1.Text = "Player 1 Moves";
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(806, 151);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.richTextBox1.Size = new System.Drawing.Size(212, 299);
+            this.richTextBox1.TabIndex = 16;
+            this.richTextBox1.Text = "";
+            // 
             // AIGameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(961, 450);
+            this.ClientSize = new System.Drawing.Size(1019, 450);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.nextBtn);
             this.Controls.Add(this.panel);
@@ -478,5 +490,6 @@ namespace Mancala
         private System.Windows.Forms.PictureBox pit11pb;
         private System.Windows.Forms.PictureBox pit12pb;
         private System.Windows.Forms.Button startGameBtn;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }

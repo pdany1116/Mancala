@@ -49,6 +49,10 @@ namespace Mancala
                 string name = pb.Name.Remove(pb.Name.Length - 2, 2);
                 label = this.Controls.Find(name, true).FirstOrDefault() as Label;
             }
+            if (label.Text == "0")
+            {
+                return;
+            }
             //make the count of rocks 0 in the clicked pit, and start sharing them to the next pits
             ShareCount(label, int.Parse(label.Text));
             //if the last rock was dropped in the player's store, permit another move, else disable all pits until the player hits Next 
