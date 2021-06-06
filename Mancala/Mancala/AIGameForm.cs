@@ -135,6 +135,7 @@ namespace Mancala
                 //    label = getRandomLabel();
                 //} while (GetPitCount(label) == 0);
                 #endregion
+
                 LOG($"AI Clicked p{bestPos} with {GetPitCount(label)} rocks!");
                 ShareCount(label);
 
@@ -359,9 +360,6 @@ namespace Mancala
             {
                 return root._value;
             }
-
-            //1 minimizer
-            //2 maximizer
             if(root._type == 2)
             {
                 int bestValue = -999999;
@@ -384,6 +382,7 @@ namespace Mancala
                 root._value = bestValue;
                 return bestValue;
             }
+            //return in case of error
             return -999999;
         }
 
